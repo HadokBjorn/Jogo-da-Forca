@@ -1,10 +1,10 @@
 import ButtonContainer from "./style";
-import Palavra from "../Palavra/style";
+import PalavraSorteada from "../Palavra/Palavra";
 function ButtonStart(props){
     return(
         <ButtonContainer>
             <button onClick={props.onClick}>Escolher Palavra</button>
-            <Palavra>Palavra Sorteada</Palavra>
+            <PalavraSorteada palavra={props.sortWord}/> 
         </ButtonContainer>
         
     )

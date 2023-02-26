@@ -2,7 +2,7 @@ import Letras from "./style";
 
 function Button(props) {
     return(
-        <Letras onClick={props.onClick} style={props.color} >
+        <Letras onClick={props.onClick} >
             {props.letra}
         </Letras>
     )

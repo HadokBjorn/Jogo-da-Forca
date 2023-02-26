@@ -10,28 +10,34 @@ import { useState } from 'react';
 
 function App() {
   const [word, setWord] = useState(0);
-  const[cor, setCor] = useState('blue');
+  const [underline, setUnderline] = useState('')
 
-    function handleColor(){
-        setCor('red');
+    function handleColor(caractere){
+      console.log(caractere);
     }
 
-  console.log(palavras[word]);
-
-  function SorteiaPalavra(){
-    setWord(parseInt(Math.random()*palavras.length));
     console.log(palavras[word]);
-  }
+
+    function SorteiaPalavra(){
+      const indiceDaPalavra = parseInt(Math.random()*palavras.length);
+      const underlines = [];
+      const caracteresDaPalavra = palavras[indiceDaPalavra].split('');
+      caracteresDaPalavra.map(() => underlines.push('_'));
+      setWord(indiceDaPalavra);
+      setUnderline(underlines.join(' '));
+      console.log(caracteresDaPalavra);
+      console.log(underlines);
+    }
 
 
   return (
     <Div>
       <Div className='image-buttonStart'>
         <Imagem/>
-        <ButtonStart onClick={SorteiaPalavra}/>
+        <ButtonStart onClick={SorteiaPalavra} sortWord={underline}/>
       </Div>
       <div className='button-container'>
-        {alfabeto.map((l) =>(<Button key={l} onClick={handleColor} letra={l} color={{color:`${cor}`}} />))}
+        {alfabeto.map((l) =>(<Button key={l} onClick={() => handleColor({l})} letra={l} />))}
       </div>
     </Div>
   );
