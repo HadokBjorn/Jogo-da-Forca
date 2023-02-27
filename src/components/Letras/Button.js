@@ -11,6 +11,8 @@ function Button({
     setTentativa,
     contaErro,
     setContaErro,
+    setForca,
+    imagens,
 }) {
     function isDisabled(){
         if(tentativa.includes(letra)){
@@ -33,11 +35,12 @@ function Button({
         if(palavra.includes(letra)){
             chuteCorreto = newPalavra.map((el,i) => (palavra[i]===letra)?letra:(el==='_'?'_':el))
             setUnderline(chuteCorreto.join(' '));
-            
+
             console.log("newPalavra: ", newPalavra);
             console.log("palavra dentro do if:",palavra)
-        }else{
-            setContaErro(errou)
+        }else if(errou >0 && errou<=6){
+            setContaErro(errou);
+            setForca(imagens[errou])
             console.log(errou)
         }
     }
@@ -47,7 +50,6 @@ function Button({
 
         console.log("tentativa",tentativa);
         console.log("letra",letra);
-        console.log("Erros: ",contaErro)
     }
 
     return(

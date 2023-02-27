@@ -1,10 +1,10 @@
 import ImageContainer from "./style";
-import imgInicial from "../../../assets/forca0.png";
 
-function Imagem(){
+
+function Imagem({forca}){
     return(
         <ImageContainer>
-            <img src={imgInicial} alt="imagem da forca"/>
+            <img src={forca} alt="imagem da forca"/>
         </ImageContainer>
     )
 }
