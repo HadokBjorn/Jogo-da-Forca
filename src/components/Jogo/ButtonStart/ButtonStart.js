@@ -32,8 +32,8 @@ function ButtonStart({
     }
     return(
         <ButtonContainer>
-            <button onClick={SorteiaPalavra}>Escolher Palavra</button>
-            <PalavraSorteada palavra={underline} className={corPalavra}/> 
+            <button onClick={SorteiaPalavra} data-test="choose-word">Escolher Palavra</button>
+            <PalavraSorteada palavra={underline} className={corPalavra} /> 
         </ButtonContainer>
         
     )

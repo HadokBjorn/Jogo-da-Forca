@@ -70,7 +70,9 @@ function Button({
     }
 
     return(
-        <Letras onClick={() => {checkLetter(); handleClick()}} disabled={(buttonsDisabled)?true:isDisabled()}>
+        <Letras onClick={() => {checkLetter(); handleClick()}} 
+        disabled={(buttonsDisabled)?true:isDisabled()}
+        data-test="letter">
             {letra}
         </Letras>
     )
