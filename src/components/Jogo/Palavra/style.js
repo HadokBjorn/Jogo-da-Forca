@@ -11,7 +11,7 @@ const Palavra = styled.p`
     line-height: 68px;
     
     text-align: center;
-    color: #000000;
+    
     
 `
 

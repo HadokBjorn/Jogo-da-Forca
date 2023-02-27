@@ -29,18 +29,11 @@ function ButtonStart({
             setContaErro(0)
             setCorPalavra('black');
         };
-        
-        console.log(caracteresDaPalavra);
-        console.log(underlines.join(' ').length);
-        console.log(underlines.join(''))
-        console.log(underlines.length);
-        console.log("underline: ",underline);
-        console.log("tamanhos da lista de palavras: ",palavras.length);
     }
     return(
         <ButtonContainer>
             <button onClick={SorteiaPalavra}>Escolher Palavra</button>
-            <PalavraSorteada palavra={underline} style={corPalavra}/> 
+            <PalavraSorteada palavra={underline} className={corPalavra}/> 
         </ButtonContainer>
         
     )

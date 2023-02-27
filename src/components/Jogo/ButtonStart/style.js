@@ -26,6 +26,15 @@ const ButtonContainer = styled.div`
 
         color: #FFFFFF;
     }
+    .black{
+    color: #000000;
+    }
+    .red{
+        color: #FF0000;
+    }
+    .green{
+        color: #27AE60;
+    }
 `
 
 export default ButtonContainer;

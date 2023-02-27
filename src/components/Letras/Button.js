@@ -43,14 +43,20 @@ function Button({
         }else if(errou >0 && errou<6){
             setContaErro(errou);
             setForca(imagens[errou])
-            console.log(errou)
+            //console.log('errou',errou)
+            //console.log("chuteCorreto: ", chuteCorreto.join(''));
         }else if(errou === 6){
             setForca(imagens[errou])
+            setTentativa([])
+            setButtonsDisabled(true)
             setCorPalavra('red');
             setUnderline(palavra)
+            //console.log("chuteCorreto: ", chuteCorreto.join(''));
         }
         
-        if(errou === 6 && (chuteCorreto.join('').includes('_')===false)){
+        if((!chuteCorreto.join('').includes('_')) && errou<6 && (chuteCorreto.join('')===palavra)){
+            setTentativa([])
+            setButtonsDisabled(true)
             setCorPalavra('green')
             console.log("chuteCorreto: ", chuteCorreto.join('').includes('_'));
         }

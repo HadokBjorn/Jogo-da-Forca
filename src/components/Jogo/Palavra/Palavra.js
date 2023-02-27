@@ -1,9 +1,9 @@
 import Palavra from "./style";
 
-function PalavraSorteada({palavra, style}) {
+function PalavraSorteada({palavra, className}) {
 
     return(
-        <Palavra style={{color:style}}>{palavra}</Palavra>
+        <Palavra className={className}>{palavra}</Palavra>
     )
 }
 export default PalavraSorteada;
