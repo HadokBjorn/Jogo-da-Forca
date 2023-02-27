@@ -7,7 +7,12 @@ function ButtonStart({
     setButtonsDisabled,
     tentativa,
     setTentativa,
-    palavras
+    palavras,
+    corPalavra,
+    setCorPalavra,
+    imagens,
+    setForca,
+    setContaErro
 }){
     function SorteiaPalavra(){
         const indiceDaPalavra = parseInt(Math.random()*palavras.length);
@@ -18,7 +23,12 @@ function ButtonStart({
         setWord(indiceDaPalavra);
         setUnderline(underlines.join(' '));
         setButtonsDisabled(false);
-        if(tentativa.length > 0){setTentativa([])};
+        if(tentativa.length > 0){
+            setTentativa([])
+            setForca(imagens[0])
+            setContaErro(0)
+            setCorPalavra('black');
+        };
         
         console.log(caracteresDaPalavra);
         console.log(underlines.join(' ').length);
@@ -30,7 +40,7 @@ function ButtonStart({
     return(
         <ButtonContainer>
             <button onClick={SorteiaPalavra}>Escolher Palavra</button>
-            <PalavraSorteada palavra={underline}/> 
+            <PalavraSorteada palavra={underline} style={corPalavra}/> 
         </ButtonContainer>
         
     )

@@ -5,6 +5,7 @@ function Button({
     letra,
     tentativa,
     buttonsDisabled,
+    setButtonsDisabled,
     setUnderline,
     word,
     underline,
@@ -13,6 +14,7 @@ function Button({
     setContaErro,
     setForca,
     imagens,
+    setCorPalavra,
 }) {
     function isDisabled(){
         if(tentativa.includes(letra)){
@@ -38,10 +40,19 @@ function Button({
 
             console.log("newPalavra: ", newPalavra);
             console.log("palavra dentro do if:",palavra)
-        }else if(errou >0 && errou<=6){
+        }else if(errou >0 && errou<6){
             setContaErro(errou);
             setForca(imagens[errou])
             console.log(errou)
+        }else if(errou === 6){
+            setForca(imagens[errou])
+            setCorPalavra('red');
+            setUnderline(palavra)
+        }
+        
+        if(errou === 6 && (chuteCorreto.join('').includes('_')===false)){
+            setCorPalavra('green')
+            console.log("chuteCorreto: ", chuteCorreto.join('').includes('_'));
         }
     }
     function handleClick(){

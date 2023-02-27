@@ -24,7 +24,8 @@ function App() {
   const [buttonsDisabled, setButtonsDisabled] = useState(true);
   const [tentativa, setTentativa] = useState([]);
   const [contaErro, setContaErro] = useState(0);
-  const [forca, setForca] = useState(imagens[contaErro])
+  const [forca, setForca] = useState(imagens[0])
+  const [corPalavra, setCorPalavra] = useState('black')
   return (
     <Div>
       <Div className='image-buttonStart'>
@@ -37,6 +38,11 @@ function App() {
         tentativa={tentativa}
         setTentativa={setTentativa}
         palavras={palavras}
+        corPalavra={corPalavra}
+        setCorPalavra={setCorPalavra}
+        imagens={imagens}
+        setForca={setForca}
+        setContaErro={setContaErro}
         />
       </Div>
       <div className='button-container'>
@@ -48,12 +54,14 @@ function App() {
         underline={underline}
         setTentativa={setTentativa}
         buttonsDisabled={buttonsDisabled}
+        setButtonsDisabled={setButtonsDisabled}
         tentativa={tentativa}
         palavras={palavras}
         contaErro={contaErro}
         setContaErro={setContaErro}
         setForca={setForca}
         imagens={imagens}
+        setCorPalavra={setCorPalavra}
         />))}
       </div>
     </Div>
