@@ -10,34 +10,38 @@ import { useState } from 'react';
 
 function App() {
   const [word, setWord] = useState(0);
-  const [underline, setUnderline] = useState('')
-
-    function handleColor(caractere){
-      console.log(caractere);
-    }
-
-    console.log(palavras[word]);
-
-    function SorteiaPalavra(){
-      const indiceDaPalavra = parseInt(Math.random()*palavras.length);
-      const underlines = [];
-      const caracteresDaPalavra = palavras[indiceDaPalavra].split('');
-      caracteresDaPalavra.map(() => underlines.push('_'));
-      setWord(indiceDaPalavra);
-      setUnderline(underlines.join(' '));
-      console.log(caracteresDaPalavra);
-      console.log(underlines);
-    }
-
-
+  const [underline, setUnderline] = useState([]);
+  const [buttonsDisabled, setButtonsDisabled] = useState(true);
+  const [tentativa, setTentativa] = useState([]);
+  const [contaErro, setContaErro] = useState(0);
   return (
     <Div>
       <Div className='image-buttonStart'>
         <Imagem/>
-        <ButtonStart onClick={SorteiaPalavra} sortWord={underline}/>
+        <ButtonStart
+        setWord={setWord}
+        underline={underline}
+        setUnderline={setUnderline}
+        setButtonsDisabled={setButtonsDisabled}
+        tentativa={tentativa}
+        setTentativa={setTentativa}
+        palavras={palavras}
+        />
       </Div>
       <div className='button-container'>
-        {alfabeto.map((l) =>(<Button key={l} onClick={() => handleColor({l})} letra={l} />))}
+        {alfabeto.map((l) =>(
+        <Button key={l} 
+        letra={l}
+        setUnderline={setUnderline}
+        word={word}
+        underline={underline}
+        setTentativa={setTentativa}
+        buttonsDisabled={buttonsDisabled}
+        tentativa={tentativa}
+        palavras={palavras}
+        contaErro={contaErro}
+        setContaErro={setContaErro}
+        />))}
       </div>
     </Div>
   );

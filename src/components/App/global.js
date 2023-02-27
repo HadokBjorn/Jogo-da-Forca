@@ -23,6 +23,10 @@ const Div = styled.div`
         margin-top: 70.5px;
         margin-bottom: 150px;
     }
+    button:disabled{
+        background: #9FAAB5;
+        color: #798A9F;
+    }
 `
 
 export default Div;

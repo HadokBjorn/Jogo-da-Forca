@@ -5,7 +5,7 @@ const Letras = styled.button`
     width: 40px;
     height: 40px;
 
-    background: #9FAAB5;
+    background: #E1ECF4;
     border: 1px solid #7AA7C7;
     border-radius: 3px;
 
