@@ -31,7 +31,7 @@ function ButtonStart({
         };
     }
     return(
-        <ButtonContainer>
+        <ButtonContainer >
             <button onClick={SorteiaPalavra} data-test="choose-word">Escolher Palavra</button>
             <PalavraSorteada palavra={underline} className={corPalavra} /> 
         </ButtonContainer>

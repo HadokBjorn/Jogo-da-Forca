@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Palavra = styled.p`
-
+    width: 100%;
     height: 68px;
 
     font-family: 'Noto Sans';
